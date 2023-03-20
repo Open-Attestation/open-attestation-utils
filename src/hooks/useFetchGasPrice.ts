@@ -45,7 +45,14 @@ const fetchGasCostData = async (chain: chainType) => {
   }
 };
 
-export const useFetchGasCost = (chain: chainType, interval = 0): { price: number; gwei: number } => {
+/**
+ * A React Hook that takes in a chainType and an interval; returns the price and gwei of the selected blockchain in every interval.
+ *
+ * @param chain - chainType, either "ethereum" or "polygon"
+ * @param interval - number in milliseconds to set the interval of the refresh
+ * @returns Price and gwei for the selected chain
+ */
+export const useFetchGasPrice = (chain: chainType, interval = 0): { price: number; gwei: number } => {
   const [price, setPrice] = useState(0);
   const [gwei, setGwei] = useState(0);
   const tick = useRefresh(interval);

@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
+/**
+ * a React Hook that will return a number when refreshed
+ *
+ * @param period - time in milliseconds to trigger a refresh
+ * @returns a number
+ */
 export const useRefresh = (period: number): number | undefined => {
   const [tick, setTick] = useState(0);
   const isTabActive = useRef(true);

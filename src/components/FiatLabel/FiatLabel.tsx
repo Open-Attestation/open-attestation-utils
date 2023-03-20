@@ -1,5 +1,11 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
 
+/**
+ * e.g. <FiatLabel>15.4</FiatLabel>
+ * **Do not pass in anything else other than number**
+ * @param children - number
+ * @returns $15.4
+ */
 export const FiatLabel: FunctionComponent = ({ children, ...options }) => {
   const [opacity, setOpacity] = useState(0);
 

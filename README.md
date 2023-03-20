@@ -9,3 +9,15 @@ If the consuming application does not support treeshaking, you should do direct 
 ```
 import { FiatLabel } from "@govtechsg/open-attestation-utils/components/FiatLabel";
 ```
+
+### Available Utility Functions
+
+| Function Name    | Description               |
+| ---------------- | ------------------------- |
+| useFetchGasPrice | get the current gas price |
+
+### Available Common Components
+
+| Component |
+| --------- |
+| FiatLabel |
