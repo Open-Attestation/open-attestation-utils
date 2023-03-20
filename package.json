@@ -1,0 +1,85 @@
+{
+  "name": "@govtechsg/open-attestation-utils",
+  "version": "0.1.0",
+  "description": "",
+  "types": "./dist/types/index.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types/index.d.ts"
+      ],
+      "constants/*": [
+        "./dist/types/constants/*.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    },
+    "./constants/*": {
+      "require": "./dist/cjs/constants/*.js",
+      "import": "./dist/esm/constants/*.js"
+    }
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs --project ./tsconfig.prod.json",
+    "build:esm": "tsc --module es2015 --outDir dist/esm --project ./tsconfig.prod.json",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist/types --project ./tsconfig.prod.json",
+    "clean": "rm -rf dist/",
+    "test:ci": "jest --runInBand",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint . --ext .ts --max-warnings 0",
+    "lint:type": "npx --no-install tsc --noEmit --sourceMap false",
+    "lint:fix": "npm run lint -- --fix",
+    "semantic-release": "semantic-release"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/prompt": "^17.4.4",
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.0",
+    "@types/jest": "^27.0.3",
+    "@types/react": "^17.0.9",
+    "@types/react-dom": "^17.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^27.4.3",
+    "jest-watch-typeahead": "^1.0.0",
+    "prettier": "^2.8.4",
+    "semantic-release": "^20.1.3",
+    "ts-jest": "^27.1.0",
+    "typescript": "^4.9.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Open-Attestation/open-attestation-utils.git"
+  },
+  "prettier": {
+    "printWidth": 120
+  }
+}
