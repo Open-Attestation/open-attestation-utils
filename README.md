@@ -1,6 +1,12 @@
-# openattestation-utils
+# open-attestation-utils
 
 This is a repository that houses shared project logic between Open Attestation and TradeTrust.
+
+## Getting Started - Install
+
+```
+npm i @govtechsg/open-attestation-utils
+```
 
 ### Direct import
 
