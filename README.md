@@ -18,9 +18,9 @@ import { FiatLabel } from "@govtechsg/open-attestation-utils/components/FiatLabe
 
 ### Available Utility Functions
 
-| Function Name    | Description               |
-| ---------------- | ------------------------- |
-| useFetchGasPrice | get the current gas price |
+| Function Name | Description                                    |
+| ------------- | ---------------------------------------------- |
+| useRefresh    | a hook that returns a number after an interval |
 
 ### Available Common Components
 
